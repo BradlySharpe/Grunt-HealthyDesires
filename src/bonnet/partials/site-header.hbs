@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    {{#if title}}
+    <title>{{title}} - Healthy Desires</title>
+    {{else}}
+    <title>Healthy Desires</title>
+    {{/if}}
+    <link rel="stylesheet" href="css/stylesheet.min.css" />
+  </head>
+  <body>
+    <div class="header">
+      {{#if title}}
+      <h1>{{title}}</h1>
+      {{else}}
+      <h1>Healthy Desires</h1>
+      {{/if}}
+    </div>

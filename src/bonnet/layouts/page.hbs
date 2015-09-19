@@ -1,0 +1,23 @@
+{{>site-header}}
+  <div class="page-content">
+    {{#markdown}}
+      {{> body}}
+    {{/markdown}}
+    <ul>
+      {{#withSort post 'data.posted'}}
+        {{#each this.pages}}
+        <li>
+          <a href="{{ createLink this.dest }}">{{ this.data.title}}</a></li>
+        {{/each}}
+      {{/withSort}}
+    </ul>
+    <ul>
+      {{#withSort shop 'data.posted'}}
+        {{#each this.pages}}
+        <li>
+          <a href="{{ createLink this.dest }}">{{ this.data.title}}</a></li>
+        {{/each}}
+      {{/withSort}}
+    </ul>
+  </div>
+{{>site-footer}}
