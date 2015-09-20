@@ -7,13 +7,76 @@
     {{else}}
     <title>Healthy Desires</title>
     {{/if}}
-    <link rel="stylesheet" href="css/stylesheet.min.css" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Web font -->
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/stylesheet.min.css" />
+    {{#if pageSlider}}
+    <link rel="stylesheet" href="/css/slider.min.css" />
+    {{/if}}
+    {{#if pageCss}}
+    <link rel="stylesheet" href="/css/pages/{{pageCss}}.min.css" />
+    {{/if}}
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.ico" />
   </head>
   <body>
-    <div class="header">
-      {{#if title}}
-      <h1>{{title}}</h1>
-      {{else}}
-      <h1>Healthy Desires</h1>
-      {{/if}}
-    </div>
+    <script>window.sliders = [];</script>
+    <div class="container">
+      <div class="row logo">
+        <a href="/" title="Healthy Desires">
+          <img src="/images/healthy-desires-logo.svg" title="Healthy Desires Logo" />
+        </a>
+      </div>
+      <div class="navigation">
+        <div class="row">
+          <nav>
+            <ul>
+              <li>
+                <a href="/" title="Home">Home</a>
+              </li>
+              <li>
+                <a href="/about-us" title="About Us">About Us</a>
+              </li>
+              <li>
+                <a href="/shop" title="Shop">Shop</a>
+                <ul>
+                  {{#withSort shop 'data.title'}}
+                    {{#each this.pages}}
+                    <li>
+                      <a href="{{ createLink this.dest }}" title="{{ this.data.title }}">{{ this.data.title }}</a>
+                    </li>
+                    {{/each}}
+                  {{/withSort}}
+                </ul>
+              </li>
+              <li>
+                <a href="/ingredients" title="Ingredients">Ingredients</a>
+              </li>
+              <li>
+                <a href="/catering" title="Catering">Catering</a>
+                <ul>
+                  {{#withSort catering 'data.title'}}
+                    {{#each this.pages}}
+                    <li>
+                      <a href="{{ createLink this.dest }}" title="{{ this.data.title }}">{{ this.data.title }}</a>
+                    </li>
+                    {{/each}}
+                  {{/withSort}}
+                </ul>
+              </li>
+              <li>
+                <a href="/recipes" title="Recipes">Recipes</a>
+              </li>
+              <li>
+                <a href="/gallery" title="Gallery">Gallery</a>
+              </li>
+              <li>
+                <a href="/contact" title="Contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
