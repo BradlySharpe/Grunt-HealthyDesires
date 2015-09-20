@@ -1,0 +1,15 @@
+$hdAqua: #00b3be;
+$hdGrey: #eee;
+$hdBlack: #333;
+$hdBackground: #fafafa;
+
+$font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$heading-font-family: 'Quicksand', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+h1, h2, h3, h4, h5, h6, nav {
+  font-family: $heading-font-family;
+}
+
+body {
+  font-family: $font-family;
+}
