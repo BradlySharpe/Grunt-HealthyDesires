@@ -1,5 +1,5 @@
 {
-  "name": "Healthy Desires",
+  "name": "HealthyDesires",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -9,6 +9,9 @@
   "protocol": "http",
   "author": "Bradly Sharpe",
   "license": "MIT",
+  "dependencies": {
+    "boneless": "^0.0.1"
+  },
   "devDependencies": {
     "assemble": "^0.4.42",
     "autoprefixer": "^6.0.3",
