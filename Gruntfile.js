@@ -1,3 +1,11 @@
+/*
+  git:
+    GitPush without credentials
+      git config remote.origin.url https://brad7928:{PASSWORD}@github.com/brad7928/{REPO}.git
+    Remove origin/HEAD -> origin/master branch
+      git remote set-head origin -d
+ */
+
 (function() {
   'use strict';
 
@@ -94,6 +102,11 @@
               name: 'shop',
               sortby: 'title',
               sortorder: 'ascending'
+            },
+            {
+              name: 'catering',
+              sortby: 'title',
+              sortorder: 'ascending'
             }
           ],
           helpers: '<%= globalConfig.src %>bonnet/helpers/**/*.js',
@@ -150,7 +163,7 @@
         },
         configuration: ['Gruntfile.js'],
         scripts: ['<%= globalConfig.src %>bonnet/script/**/*.js'],
-        compiled: ['<%= globalConfig.dest %>js/**/*.js']
+        compiled: ['<%= globalConfig.dest %>js/**/*.js', '!<%= globalConfig.dest %>js/**/*.min.js']
       },
 
       // Compile SASS files
@@ -388,8 +401,12 @@
           tasks: globalConfig.tasks.html
         },
         css: {
-          files: ['<%= globalConfig.src %>bonnet/sass/stylesheet.{sass,scss}', '<%= globalConfig.dest %>**/*.html'],
+          files: ['<%= globalConfig.src %>bonnet/sass/**/*.{sass,scss}', '<%= globalConfig.dest %>**/*.html'],
           tasks: globalConfig.tasks.css.force
+        },
+        javascript: {
+          files: ['<%= globalConfig.src %>bonnet/scripts/**/*.js'],
+          tasks: globalConfig.tasks.javascript.force
         },
         images: {
           files: ['<%= globalConfig.src %>images/**/*.{png,jpg,jpeg,gif,svg}'],
