@@ -1,0 +1,20 @@
+
+
+.slider.hero #slide-cakes:checked ~ .active label:nth-child(1),
+.slider.hero #slide-bliss-balls:checked ~ .active label:nth-child(2),
+.slider.hero #slide-catering-boxes:checked ~ .active label:nth-child(3)
+{
+  background: #00b3be;
+  border-color: #00b3be !important;
+}
+
+.slider.hero #slide-cakes:checked ~ .slides .slide:first-child .info,
+.slider.hero #slide-bliss-balls:checked ~ .slides .slide:nth-child(2) .info,
+.slider.hero #slide-catering-boxes:checked ~ .slides .slide:last-child .info
+{
+  opacity: 1 !important;
+}
+
+.slider.hero #slide-cakes:checked ~ .slides .inner { margin-left: 0% }
+.slider.hero #slide-bliss-balls:checked ~ .slides .inner { margin-left: -100% }
+.slider.hero #slide-catering-boxes:checked ~ .slides .inner { margin-left: -200% }
