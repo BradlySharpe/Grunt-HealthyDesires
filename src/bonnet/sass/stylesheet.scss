@@ -15,6 +15,10 @@ img {
   max-width: 100%;
 }
 
+.btn, button, input[type='submit'], input[type='reset'] {
+	transition: background-color .5s, color .5s, border-color .5s;
+}
+
 .logo {
   background: $hdAqua;
 	padding: 1rem 0;
