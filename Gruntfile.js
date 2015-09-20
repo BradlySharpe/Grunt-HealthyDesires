@@ -198,7 +198,7 @@
         dev: {
           options: {
             ignore: [], // Selectors to ignore
-            stylesheets: ['/../css/stylesheet.css'], // Stylesheets to read
+            stylesheets: ['../../css/stylesheet.css'], // Stylesheets to read
             report: 'min' // Reporting
           },
           cwd: './',
