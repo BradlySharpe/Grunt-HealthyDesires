@@ -4,7 +4,7 @@ if (window.sliders)
       sliderIndex: index,
       currentIndex: 0,
       timer: undefined,
-      interval: 3e3,
+      interval: 5e3,
       next:function(){
         var e;
         if ((this.slider.currentIndex + 1) > (this.slides.length - 1)) {
@@ -32,12 +32,12 @@ if (window.sliders)
         this.timer = undefined;
       },
       init:function(interval) {
-        this.interval = interval || 3e3;
+        this.interval = interval || this.interval;
         window.sliders[this.sliderIndex].slides.forEach(
           function(v) {
             var e = document.getElementById(v);
             if (e)
-              e.onclick = function(){ window.sliders[this.sliderIndex].slider.stop(); };
+              e.onclick = function(){ window.sliders[index].slider.stop(); };
           }
         );
       }
