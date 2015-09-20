@@ -13,4 +13,8 @@ module.exports.register = function(Handlebars, options) {
       return path.replace('dist', '').replace('.html', '');
     return '';
   });
+
+  Handlebars.registerHelper('json', function(context) {
+    return JSON.stringify(context);
+  });
 };
