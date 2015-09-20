@@ -1,4 +1,10 @@
+@import '../../../node_modules/boneless/lib/_boneless/_buttons/_mixins.scss';
+@import 'settings';
+@import 'slider';
 
+.slider.hero {
+  margin: 2rem auto;
+}
 
 .slider.hero #slide-cakes:checked ~ .active label:nth-child(1),
 .slider.hero #slide-bliss-balls:checked ~ .active label:nth-child(2),
@@ -18,3 +24,37 @@
 .slider.hero #slide-cakes:checked ~ .slides .inner { margin-left: 0% }
 .slider.hero #slide-bliss-balls:checked ~ .slides .inner { margin-left: -100% }
 .slider.hero #slide-catering-boxes:checked ~ .slides .inner { margin-left: -200% }
+
+.facts {
+  text-align: center;
+  overflow: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+
+  li {
+    font-size: 1.4rem;
+    line-height: 3rem;
+    font-family: $heading-font-family;
+    list-style: none;
+    margin: 0;
+    border-right: .1rem solid $hdBlack;
+    align-self: center;
+    flex-grow: 1;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+@include button($classname: 'btn-hdAqua', $color: $hdAqua, $type: 'solid');
+
+.btn-hdAqua {
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+}
