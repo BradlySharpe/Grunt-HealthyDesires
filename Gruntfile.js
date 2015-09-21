@@ -4,8 +4,6 @@
       git config remote.origin.url https://brad7928:{PASSWORD}@github.com/brad7928/{REPO}.git
     Remove origin/HEAD -> origin/master branch
       git remote set-head origin -d
-
-    Test Commit
  */
 
 (function() {
