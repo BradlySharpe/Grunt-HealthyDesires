@@ -15,7 +15,7 @@
       src: './src/',
       dest: './dist/',
       tasks: {
-        html: ['assemble', 'htmlmin', 'movePages'],
+        html: ['assemble', 'htmlmin', 'movePages', 'xml_sitemap'],
         javascript: {
           force: ['concat', 'uglify', 'jshint'],
           newer: ['newer:concat', 'newer:uglify', 'jshint']
@@ -198,7 +198,7 @@
         dev: {
           options: {
             ignore: [], // Selectors to ignore
-            stylesheets: ['../../css/stylesheet.css'], // Stylesheets to read
+            stylesheets: ['../css/stylesheet.css'], // Stylesheets to read
             report: 'min' // Reporting
           },
           cwd: './',
