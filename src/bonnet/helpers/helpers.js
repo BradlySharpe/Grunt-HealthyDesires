@@ -8,7 +8,6 @@ module.exports.register = function(Handlebars, options) {
   });
 
   Handlebars.registerHelper('createLink', function(path) {
-    console.log("HERE", path)
     if (path)
       return path.replace('dist', '').replace('.html', '');
     return '';
