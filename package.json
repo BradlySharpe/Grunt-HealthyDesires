@@ -10,7 +10,8 @@
   "author": "Bradly Sharpe",
   "license": "MIT",
   "dependencies": {
-    "boneless": "^0.0.1"
+    "boneless": "^0.0.1",
+    "normalize-scss": "^3.0.2"
   },
   "devDependencies": {
     "assemble": "^0.4.42",
