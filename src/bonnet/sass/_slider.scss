@@ -1,8 +1,20 @@
+@import '../../../node_modules/boneless/lib/_boneless/_utilities/_placeholders.scss';
+@import '../../../node_modules/boneless/lib/_boneless/_utilities/_mixins.scss';
+@import '../../../node_modules/boneless/lib/_boneless/_grid.scss';
+
 .slider {
 	-webkit-transform: translateZ(0);
 	transition: all 0.5s ease-out;
-	max-width: 70%;
-	margin: 0 15%;
+
+	@include bp($bp-grid-medium) {
+		max-width: 80%;
+		margin: 0 10%;
+	}
+
+	@include bp($bp-grid-large) {
+		max-width: 70%;
+		margin: 0 15%;
+	}
 
 	input[type="radio"] {
 		display: none;
@@ -32,8 +44,9 @@
 		position: relative;
 
 		.info {
+			display: none;
 			position: absolute;
-			padding: 2rem;
+			padding: .5rem;
 			bottom: 0;
 			width: 100%;
 			opacity: 0;
@@ -41,6 +54,11 @@
 			background: #fff;
 			background: rgba(255,255,255,0.9);
 			box-sizing: border-box;
+			text-align: left;
+			@include bp($bp-grid-medium) {
+				display: block;
+				padding: 2rem;
+			}
 
 			h5 {
 				color: #333;
@@ -48,26 +66,26 @@
 				font-size: 1.8rem;
 				line-height: 1.4;
 				text-align: left;
+				display: none;
+
+				@include bp($bp-grid-medium) {
+					display: block;
+				}
 			}
 
 			p {
 				margin: 0;
 				line-height: 1.6;
-				display: block;
+				display: none;
+
+				@include bp($bp-grid-medium) {
+					display: block;
+				}
 			}
 		}
 
 		.info.hasButton {
-			text-align: left;
-
-			h5 {
-				display: block;
-				text-align: left;
-			}
-
-			p {
-				display: block;
-			}
+			display: block;
 
 			.btn {
 				margin: 0;
@@ -90,10 +108,15 @@
 	label {
 		border-radius: 0.75rem;
 		display: inline-block;
-		width: 1.5rem;
-		height: 1.5rem;
+		width: 1rem;
+		height: 1rem;
 		background: #aaa;
 		margin-right: 0.5rem;
+
+		@include bp($bp-grid-medium) {
+			width: 1.2rem;
+			height: 1.2rem;
+		}
 
 		&:hover {
 			background: #00b3be;
