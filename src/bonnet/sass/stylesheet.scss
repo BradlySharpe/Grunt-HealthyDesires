@@ -44,8 +44,8 @@ img {
 		max-height: 21.2rem;
 
 		@include bp($bp-grid-medium) {
-	    margin: 0 35%;
-	    max-width: 30%;
+	    margin: 0 40%;
+	    max-width: 20%;
 		}
   }
 }
@@ -151,6 +151,16 @@ img {
 			overflow: visible;
 		}
 
+    ul li {
+			& > a {
+				&:after {
+					content: ' \02193';
+				}
+				&:only-child:after {
+					content: '';
+				}
+			}
+		}
 
 		ul li, li a {
 			width: auto;
@@ -199,5 +209,8 @@ img {
 		}
 	}
 
+}
 
+.page-content {
+	padding: 1rem 0;
 }
