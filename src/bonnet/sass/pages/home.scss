@@ -4,10 +4,6 @@
 @import 'settings';
 @import 'slider';
 
-.slider.hero {
-  margin: 2rem auto;
-}
-
 .slider.hero #slide-cakes:checked ~ .active label:nth-child(1),
 .slider.hero #slide-bliss-balls:checked ~ .active label:nth-child(2),
 .slider.hero #slide-catering-boxes:checked ~ .active label:nth-child(3)
