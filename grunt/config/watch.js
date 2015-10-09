@@ -23,6 +23,6 @@ module.exports = {
   },
   images: {
     files: ['<%= config.src %>images/**/*.{png,jpg,jpeg,gif,svg}'],
-    tasks: ['newer:imagemin']
+    tasks: ['imagemin']
   }
 };
