@@ -1,5 +1,6 @@
 module.exports = {
   options: {
+    reporter: require('jshint-stylish'),
     globals: {
       jQuery: true,
       console: true,
