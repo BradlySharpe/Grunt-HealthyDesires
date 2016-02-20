@@ -34,7 +34,7 @@ module.exports = {
         cwd: '<%= config.src %>content/_pages/',
         dest: '<%= config.dest %>',
         expand: true,
-        src: '**/*.hbs'
+        src: ['**/*.hbs']
       }
     ]
   }

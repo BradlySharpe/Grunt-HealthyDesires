@@ -43,5 +43,8 @@
     "matchdep": "^0.3.0",
     "pixrem": "^2.0.1",
     "time-grunt": "^1.2.1"
+  },
+  "site": {
+    "title": "Healthy Desires"
   }
 }

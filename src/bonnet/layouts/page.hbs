@@ -1,7 +1,18 @@
 {{>site-header}}
   <div class="page-content">
-    {{#markdown}}
-      {{> body}}
-    {{/markdown}}
+    {{#unless fullPage}}
+    <div class="row">
+      <div class="small-10 large-10 column centered">
+    {{/unless}}
+        {{#unless homepage}}
+        <h1>{{title}}</h1>
+        {{/unless}}
+        {{#markdown}}
+          {{> body}}
+        {{/markdown}}
+    {{#unless fullPage}}
+      </div>
+    </div>
+    {{/unless}}
   </div>
 {{>site-footer}}

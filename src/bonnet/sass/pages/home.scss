@@ -4,24 +4,30 @@
 @import 'settings';
 @import 'slider';
 
-.slider.hero #slide-cakes:checked ~ .active label:nth-child(1),
-.slider.hero #slide-bliss-balls:checked ~ .active label:nth-child(2),
-.slider.hero #slide-catering-boxes:checked ~ .active label:nth-child(3)
+.slider.hero #slide-shkara-eating-cake:checked ~ .active label:nth-child(1),
+.slider.hero #slide-jayda-enjoying-chocmint-cheezecake-horizontal:checked ~ .active label:nth-child(2),
+.slider.hero #slide-shkara-looking-at-cake:checked ~ .active label:nth-child(3),
+.slider.hero #slide-jayda-and-Raya-holding-bananas:checked ~ .active label:nth-child(4),
+.slider.hero #slide-mixed-berry-and-lemon-cheezecake:checked ~ .active label:nth-child(5)
 {
   background: #00b3be;
   border-color: #00b3be !important;
 }
 
-.slider.hero #slide-cakes:checked ~ .slides .slide:first-child .info,
-.slider.hero #slide-bliss-balls:checked ~ .slides .slide:nth-child(2) .info,
-.slider.hero #slide-catering-boxes:checked ~ .slides .slide:last-child .info
+.slider.hero #slide-shkara-eating-cake:checked ~ .slides .slide:first-child .info,
+.slider.hero #slide-jayda-enjoying-chocmint-cheezecake-horizontal:checked ~ .slides .slide:nth-child(2) .info,
+.slider.hero #slide-shkara-looking-at-cake:checked ~ .slides .slide:nth-child(3) .info,
+.slider.hero #slide-jayda-and-Raya-holding-bananas:checked ~ .slides .slide:nth-child(4) .info,
+.slider.hero #slide-mixed-berry-and-lemon-cheezecake:checked ~ .slides .slide:last-child .info
 {
   opacity: 1 !important;
 }
 
-.slider.hero #slide-cakes:checked ~ .slides .inner { margin-left: 0% }
-.slider.hero #slide-bliss-balls:checked ~ .slides .inner { margin-left: -100% }
-.slider.hero #slide-catering-boxes:checked ~ .slides .inner { margin-left: -200% }
+.slider.hero #slide-shkara-eating-cake:checked ~ .slides .inner { margin-left: 0% }
+.slider.hero #slide-jayda-enjoying-chocmint-cheezecake-horizontal:checked ~ .slides .inner { margin-left: -100% }
+.slider.hero #slide-shkara-looking-at-cake:checked ~ .slides .inner { margin-left: -200% }
+.slider.hero #slide-jayda-and-Raya-holding-bananas:checked ~ .slides .inner { margin-left: -300% }
+.slider.hero #slide-mixed-berry-and-lemon-cheezecake:checked ~ .slides .inner { margin-left: -400% }
 
 
 .facts {

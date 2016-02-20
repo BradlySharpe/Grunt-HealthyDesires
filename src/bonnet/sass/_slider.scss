@@ -59,13 +59,13 @@
 			&.hasButton {
 				padding-bottom: 60px;
 				@include bp($bp-grid-medium) {
-					padding: 2rem;
+					padding: 1rem;
 				}
 			}
 
 			@include bp($bp-grid-medium) {
 				display: block;
-				padding: 2rem;
+				padding: 1rem;
 				position: absolute;
 				bottom: 0;
 			}
@@ -95,8 +95,8 @@
 				margin: 0;
 				position: absolute;
 				bottom: 1rem;
-				left: 30%;
-				right: 30%;
+				left: 1rem;
+				right: 1rem;
 
 				@include bp($bp-grid-medium) {
 					float: right;

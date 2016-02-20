@@ -1,5 +1,6 @@
 ---
-title: <%= pkg.name %>
+title: <%= pkg.site.title %>
+homepage: true
 posted: 2015-09-18
 pageCss: "home"
 pageSlider: true
@@ -7,42 +8,58 @@ pageSlider: true
 <div class="container">
   <div class="row">
     <div class="slider hero">
-      <input type="radio" name="home" id="slide-cakes" checked="checked">
-      <input type="radio" name="home" id="slide-bliss-balls">
-      <input type="radio" name="home" id="slide-catering-boxes">
+      <input type="radio" name="home" id="slide-shkara-eating-cake" checked="checked">
+      <input type="radio" name="home" id="slide-jayda-enjoying-chocmint-cheezecake-horizontal">
+      <input type="radio" name="home" id="slide-shkara-looking-at-cake">
+      <input type="radio" name="home" id="slide-jayda-and-Raya-holding-bananas">
+      <input type="radio" name="home" id="slide-mixed-berry-and-lemon-cheezecake">
       <div class="slides">
         <div class="wrapper">
           <div class="inner">
             <div class="slide">
-              <img src="/images/cake.jpg" alt="Healthy Desires Cakes">
+              <img src="/images/Shkara-eating-cake.jpg" alt="Shkara eating cake">
               <div class="info hasButton">
-                <a href="#" class="btn btn-hdAqua" title="">Purchase</a>
+                <a href="/shop/cakes/" class="btn btn-hdAqua" title="">Order</a>
                 <h5>Healthy Desires Cakes</h5>
-                <p>Some information about our cakes</p>
               </div>
             </div>
             <div class="slide">
-              <img src="/images/bliss-balls2.jpg" alt="Healthy Desires Cakes">
-              <div class="info">
-                <h5>Healthy Desires Bliss Balls</h5>
-                <p>Some information about our bliss balls</p>
-              </div>
-            </div>
-            <div class="slide">
-              <img src="/images/catering-box2.jpg" alt="Healthy Desires Cakes">
+              <img src="/images/Jayda-enjoying-chocmint-cheezecake-horizontal.jpg" alt="Jayda enjoying chocmint cheezecake">
               <div class="info hasButton">
                 <a href="#" class="btn btn-hdAqua" title="">More Info</a>
-                <h5>Catering Boxes</h5>
-                <p>Some information about our catering boxes</p>
+                <h5>Perfect for kids!</h5>
+                <!-- <p>Some information about our Cake</p> -->
+              </div>
+            </div>
+            <div class="slide">
+              <img src="/images/Shkara-looking-at-cake.jpg" alt="Shkara looking at cake">
+              <div class="info hasButton">
+                <a href="/shop/cakes/" class="btn btn-hdAqua" title="">Order</a>
+                <h5>Healthy Desires Cakes</h5>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="/images/Jayda-and-Raya-holding-bananas.jpg" alt="Jayda and Raya holding bananas">
+              <div class="info">
+                <h5>Exercise Groups</h5>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="/images/Mixed-berry-and-lemon-cheezecake.jpg" alt="Mixed berry and lemon cheezecake">
+              <div class="info hasButton">
+                <a href="/shop/cakes/" class="btn btn-hdAqua" title="">More Info</a>
+                <h5>Mixed Berry &amp; Lemon Cheezecake</h5>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="active">
-        <label for="slide-cakes"></label>
-        <label for="slide-bliss-balls"></label>
-        <label for="slide-catering-boxes"></label>
+        <label for="slide-shkara-eating-cake"></label>
+        <label for="slide-jayda-enjoying-chocmint-cheezecake-horizontal"></label>
+        <label for="slide-shkara-looking-at-cake"></label>
+        <label for="slide-jayda-and-Raya-holding-bananas"></label>
+        <label for="slide-mixed-berry-and-lemon-cheezecake"></label>
       </div>
     </div>
   </div>
@@ -64,9 +81,11 @@ pageSlider: true
       "name": "hero",
       "autostart": true,
       "slides": [
-        "slide-cakes",
-        "slide-bliss-balls",
-        "slide-catering-boxes"
+        "slide-shkara-eating-cake",
+        "slide-jayda-enjoying-chocmint-cheezecake-horizontal",
+        "slide-shkara-looking-at-cake",
+        "slide-jayda-and-Raya-holding-bananas",
+        "slide-mixed-berry-and-lemon-cheezecake"
       ]
     }
   );
