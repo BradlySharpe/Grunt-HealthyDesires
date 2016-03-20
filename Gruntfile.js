@@ -22,7 +22,16 @@
           mobile: 70
         },
         pages: ['/']
+      },
+      instagram: {
+        "user-id": "1791541740",
+        "client-id": "e117137e514442b4808c8bafbedf409a",
+        "access-token": "1791541740.e117137.b337a45f7eda4b5d86d714856853c2ec",
+        //"template": "<a href='{{link}}'><img src='{{image}}' /></a>"
+        "template": '<img class="gallery-image" src="{{image}}" data-jslghtbx="{{model.images.standard_resolution.url}}" />'
       }
+      // Generate new Token
+      //https://www.instagram.com/oauth/authorize/?client_id=e117137e514442b4808c8bafbedf409a&redirect_uri=http://test.healthydesires.com.au/gallery&response_type=token&scope=likes+comments+relationships+basic
     };
 
     grunt.initConfig({

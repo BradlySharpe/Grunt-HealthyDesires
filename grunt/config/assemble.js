@@ -20,7 +20,8 @@ module.exports = {
     helpers: '<%= config.src %>bonnet/helpers/**/*.js',
     layout: 'page.hbs',
     layoutdir: '<%= config.src %>bonnet/layouts/',
-    partials: '<%= config.src %>bonnet/partials/**/*.hbs'
+    partials: '<%= config.src %>bonnet/partials/**/*.hbs',
+    config: '<%= config %>'
   },
   posts: {
     files: [

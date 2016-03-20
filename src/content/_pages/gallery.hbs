@@ -1,6 +1,76 @@
 ---
 title: "Gallery"
-posted: 2015-09-18
+posted: 2016-03-20
+pageCss: "gallery"
+fullPage: true
 ---
+<div class="row">
+  <div id="notice" class="notice u-center-text">
+    <noscript>
+      JavaScript is required to view the Gallery
+    </noscript>
+  </div>
+</div>
 
-Gallery
+<div id="gallery" class="gallery"></div>
+<a href="#" class="load-more btn btn-hdAqua" id="more">Load More</a>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript">
+  $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css') );
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/masonry/4.0.0/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+<script type="text/javascript">
+  var notice = document.getElementById('notice'),
+    more = document.getElementById('more');
+
+  var Instagram = {
+    endpoint: 'https://api.instagram.com/v1/users/{{ config.instagram.user-id }}/media/recent/?access_token={{ config.instagram.access-token }}&count=20',
+    //endpoint: 'https://api.instagram.com/v1/users/{{ config.instagram.user-id }}/media/recent/?access_token=&count=20',
+    notice: function(message) {
+      (message) ? $(notice).text(message) : $(notice).empty();
+    },
+    fetch: function() {
+      $.ajax({
+        type: "GET",
+        dataType: "jsonp",
+        url: this.endpoint
+      })
+        .done(function (json) {
+          $.each(json.data,function(){
+            var thisdata=this;
+            $('.gallery').append("<div class='instagram-img'><div class='imagebox'><span class='likes'>"+this.likes.count+"</span><a class='fancy' rel='instagram' href='" + this.images.standard_resolution.url + "' data-link='" + this.link + "' data-likes='" + this.likes.count + "' data-comments='" + this.comments.count + "'><img src='"+this.images.low_resolution.url+"'/></a></div><div class='instagram-description'><span class='caption'>"+this.caption.text+"</span></div></div>");
+            Instagram.notice();
+          });
+          var $container = $('.gallery');
+            // initialize
+            $container.masonry({
+              itemSelector: '.instagram-img',
+              isFitWidth: true
+            });
+
+            $("a.fancy").fancybox({
+              titlePosition: 'inside',
+              opacity: true,
+              centerOnScroll: true,
+              beforeLoad: function() {
+                  this.title = "<span class='likes'>"+ $(this.element).attr('data-likes') +"</span> - View on <a href='" + $(this.element).attr('data-link') + "'>Instagram</a>";
+              },
+              helpers : {
+                  title: {
+                      type: 'inside'
+                  }
+              }
+          	});
+        })
+        .fail(function(ajax, text, error) {
+          console.error(ajax, text, error);
+          Instagram.notice("Failed to fetch Instagram pictures");
+        });
+    }
+  }
+  Instagram.notice("Loading images...");
+  Instagram.fetch();
+</script>
