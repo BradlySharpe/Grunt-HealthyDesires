@@ -1,0 +1,54 @@
+---
+title: "Contact"
+path: /
+pageCss: "contact"
+---
+<div class="container">
+  <form class="contact" name="contact" onsubmit="return validate(this);" method="post" action="submit.php">
+    <p>Required fields marked with <span class="required">*</span></p>
+    <div class="row">
+      <div class="small-12 large-6 columns">
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input type="email" placeholder="mal.function@bigcompany.com.au" id="email" name="email" required="required">
+        <p class="invalidMessage">Please enter a valid email address</p>
+      </div>
+      <div class="small-12 large-6 columns">
+        <label for="reason">Reason for contacting <span class="required">*</span></label>
+        <select id="reason" name="reason" required="required">
+          <option value="" disabled="" selected="">Select your reason</option>
+          <optgroup label="Reasons:">
+            <option value="general-question">General Question</option>
+            <option value="project-enquiry">Project Enquiry</option>
+          </optgroup>
+        </select>
+        <p class="invalidMessage">Please select a valid reason</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 large-6 columns">
+        <label for="fullname">Full Name <span class="required">*</span></label>
+        <input type="text" placeholder="Malcolm Function" id="fullname" name="fullname" required="required">
+        <p class="invalidMessage">Please enter a valid full name</p>
+      </div>
+      <div class="small-12 large-6 columns">
+        <label for="phone">Phone Number</label>
+        <input type="tel" placeholder="0412 345 678" id="phone" name="phone">
+        <p class="invalidMessage">Please enter a valid phone number</p>
+      </div>
+    </div>
+    <div class="small-12 large-12 columns">
+      <label for="message">Message <span class="required">*</span></label>
+      <textarea placeholder="Hi ..." id="message" name="message" required="required"></textarea>
+      <p class="invalidMessage">Please enter a message</p>
+    </div>
+    <div class="small-12 large-12 columns">
+      <div class="row">
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <div class="small-12 large-8 columns g-recaptcha" data-sitekey="{{config.google.recaptcha.key}}"></div>
+        <div class="small-12 large-4 columns submit">
+          <button class="btn btn-hdAqua" type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
