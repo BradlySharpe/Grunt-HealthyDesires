@@ -23,7 +23,14 @@
         },
         pages: ['/']
       },
+      google: {
+        recaptcha: {
+          key: "6Lct0QYUAAAAAB6ZiDxN60RS7A30nD5POOhMheKy",
+          secret: "6Lct0QYUAAAAANp9SPHDt273lr1h7Sa8Z2Vf_jqJ"
+        }
+      },
       instagram: {
+        "username": "healthydesires1",
         "user-id": "1791541740",
         "client-id": "e117137e514442b4808c8bafbedf409a",
         "access-token": "1791541740.e117137.b337a45f7eda4b5d86d714856853c2ec",
