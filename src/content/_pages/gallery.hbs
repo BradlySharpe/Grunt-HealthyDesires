@@ -13,7 +13,9 @@ fullPage: true
 </div>
 
 <div id="gallery" class="gallery"></div>
-<a href="#" class="load-more btn btn-hdAqua" id="more">Load More</a>
+<div class="u-center-text">
+  <a href="https://www.instagram.com/{{config.instagram.username}}/" class="view-more btn btn-hdAqua" target="_blank">View More on Instagram</a>
+</div>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script type="text/javascript">
@@ -23,8 +25,7 @@ fullPage: true
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
 
 <script type="text/javascript">
-  var notice = document.getElementById('notice'),
-    more = document.getElementById('more');
+  var notice = document.getElementById('notice');
 
   var Instagram = {
     endpoint: 'https://api.instagram.com/v1/users/{{ config.instagram.user-id }}/media/recent/?access_token={{ config.instagram.access-token }}&count=20',
@@ -39,12 +40,13 @@ fullPage: true
         url: this.endpoint
       })
         .done(function (json) {
-          $.each(json.data,function(){
-            var thisdata=this;
-            $('.gallery').append("<div class='instagram-img'><div class='imagebox'><span class='likes'>"+this.likes.count+"</span><a class='fancy' rel='instagram' href='" + this.images.standard_resolution.url + "' data-link='" + this.link + "' data-likes='" + this.likes.count + "' data-comments='" + this.comments.count + "'><img src='"+this.images.low_resolution.url+"'/></a></div><div class='instagram-description'><span class='caption'>"+this.caption.text+"</span></div></div>");
-            Instagram.notice();
-          });
-          var $container = $('.gallery');
+          if (json.meta.code === 200 && 0 < json.data.length) {
+            $.each(json.data, function(){
+              if ('image' === this.type)
+                $('.gallery').append("<div class='instagram-img' data-id='" + this.id + "'><div class='imagebox'><span class='likes'>"+this.likes.count+"</span><a class='fancy' rel='instagram' href='" + this.images.standard_resolution.url + "' data-link='" + this.link + "' data-likes='" + this.likes.count + "' data-comments='" + this.comments.count + "'><img src='"+this.images.low_resolution.url+"'/></a></div><div class='instagram-description'><span class='caption'>"+this.caption.text+"</span></div></div>");
+              Instagram.notice();
+            });
+            var $container = $('.gallery');
             // initialize
             $container.masonry({
               itemSelector: '.instagram-img',
@@ -59,11 +61,12 @@ fullPage: true
                   this.title = "<span class='likes'>"+ $(this.element).attr('data-likes') +"</span> - View on <a href='" + $(this.element).attr('data-link') + "'>Instagram</a>";
               },
               helpers : {
-                  title: {
-                      type: 'inside'
-                  }
+                title: {
+                    type: 'inside'
+                }
               }
           	});
+          }
         })
         .fail(function(ajax, text, error) {
           console.error(ajax, text, error);
