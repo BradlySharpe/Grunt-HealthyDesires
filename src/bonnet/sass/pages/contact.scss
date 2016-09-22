@@ -21,11 +21,16 @@ textarea {
   }
 }
 
+input.invalid,
+textarea.invalid {
+  border: .1rem solid #f00;
+}
+
 .invalidMessage {
   display: none;
 }
 
-.invalid + .invalidMessage {
+.invalid ~ .invalidMessage {
   display: block;
 }
 

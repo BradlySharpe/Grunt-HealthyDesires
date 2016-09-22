@@ -4,11 +4,16 @@
 @import 'settings';
 @import 'slider';
 
+h1 {
+  margin: 0;
+  line-height: inherit;
+  font-size: inherit;
+}
+
 .slider.hero #slide-shkara-eating-cake:checked ~ .active label:nth-child(1),
 .slider.hero #slide-jayda-enjoying-chocmint-cheezecake-horizontal:checked ~ .active label:nth-child(2),
 .slider.hero #slide-shkara-looking-at-cake:checked ~ .active label:nth-child(3),
-.slider.hero #slide-jayda-and-Raya-holding-bananas:checked ~ .active label:nth-child(4),
-.slider.hero #slide-mixed-berry-and-lemon-cheezecake:checked ~ .active label:nth-child(5)
+.slider.hero #slide-mixed-berry-and-lemon-cheezecake:checked ~ .active label:nth-child(4)
 {
   background: #00b3be;
   border-color: #00b3be !important;
@@ -17,7 +22,6 @@
 .slider.hero #slide-shkara-eating-cake:checked ~ .slides .slide:first-child .info,
 .slider.hero #slide-jayda-enjoying-chocmint-cheezecake-horizontal:checked ~ .slides .slide:nth-child(2) .info,
 .slider.hero #slide-shkara-looking-at-cake:checked ~ .slides .slide:nth-child(3) .info,
-.slider.hero #slide-jayda-and-Raya-holding-bananas:checked ~ .slides .slide:nth-child(4) .info,
 .slider.hero #slide-mixed-berry-and-lemon-cheezecake:checked ~ .slides .slide:last-child .info
 {
   opacity: 1 !important;
@@ -26,8 +30,7 @@
 .slider.hero #slide-shkara-eating-cake:checked ~ .slides .inner { margin-left: 0% }
 .slider.hero #slide-jayda-enjoying-chocmint-cheezecake-horizontal:checked ~ .slides .inner { margin-left: -100% }
 .slider.hero #slide-shkara-looking-at-cake:checked ~ .slides .inner { margin-left: -200% }
-.slider.hero #slide-jayda-and-Raya-holding-bananas:checked ~ .slides .inner { margin-left: -300% }
-.slider.hero #slide-mixed-berry-and-lemon-cheezecake:checked ~ .slides .inner { margin-left: -400% }
+.slider.hero #slide-mixed-berry-and-lemon-cheezecake:checked ~ .slides .inner { margin-left: -300% }
 
 
 .facts {
@@ -44,16 +47,21 @@
 
   li {
     font-size: 1.4rem;
-    line-height: 3rem;
+    line-height: 1.5rem;
     font-family: $heading-font-family;
     list-style: none;
-    margin: 0 .5rem;
-    @include bp($bp-grid-medium) {
-      margin: 0;
-      border-right: .1rem solid $hdBlack;
-    }
+    padding: 0 .6rem;
+    margin: 0;
     align-self: center;
     flex-grow: 1;
+
+    @include bp($bp-grid-medium) {
+      border-right: .1rem solid $hdBlack;
+    }
+
+    @include bp($bp-grid-large) {
+      line-height: 3rem;
+    }
 
     &:last-child {
       border-right: none;

@@ -21,7 +21,12 @@ module.exports = {
     layout: 'page.hbs',
     layoutdir: '<%= config.src %>bonnet/layouts/',
     partials: '<%= config.src %>bonnet/partials/**/*.hbs',
-    config: '<%= config %>'
+    config: '<%= config %>',
+    pkg: '<%= pkg %>',
+    plugins: ['grunt-assemble-permalinks'],
+    permalinks: {
+      structure: ':basename/index:ext'
+    }
   },
   posts: {
     files: [
@@ -29,7 +34,7 @@ module.exports = {
         cwd: '<%= config.src %>content/',
         dest: '<%= config.dest %>',
         expand: true,
-        src: ['**/*.hbs', '**/*.md', '!_pages/**/*.hbs']
+        src: ['**/*.hbs', '**/*.md', '!_pages/**/*.hbs', '!includes/**/*']
       },
       {
         cwd: '<%= config.src %>content/_pages/',

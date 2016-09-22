@@ -7,10 +7,11 @@
     {{else}}
     <title>Healthy Desires</title>
     {{/if}}
-    <meta name="description" content="">
+    <meta name="description" content="{{#if description}}{{ description }}{{else}}{{ pkg.site.description }}{{/if}}">
+    <meta name="keywords" content="{{#if keywords}}{{ keywords }}{{else}}{{ pkg.site.keywords }}{{/if}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Web font -->
-    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
     <!-- CSS -->
     <link rel="stylesheet" href="/css/stylesheet.min.css" />
     {{#if pageCss}}
@@ -18,14 +19,17 @@
     {{/if}}
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/images/favicon.ico" />
+    {{> opengraph}}
   </head>
   <body>
     <script>window.sliders = [];</script>
     <div class="container">
       <div class="row logo">
+        {{#if homepage}}<h1>{{/if}}
         <a href="/" title="Healthy Desires">
-          <img src="/images/healthy-desires-logo.svg" title="Healthy Desires Logo" alt="Healthy Desires Logo" />
+          <img src="/images/healthy-desires-logo.svg" title="Healthy Desires" alt="Healthy Desires Logo" />
         </a>
+        {{#if homepage}}</h1>{{/if}}
       </div>
       <div class="navigation">
         <div class="row">

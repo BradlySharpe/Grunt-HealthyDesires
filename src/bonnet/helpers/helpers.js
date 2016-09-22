@@ -8,8 +8,9 @@ module.exports.register = function(Handlebars, options) {
   });
 
   Handlebars.registerHelper('createLink', function(path) {
+    var folder = options.config.dest.replace('.', '').replace('/', '');
     if (path)
-      return path.replace('dist', '').replace('.html', '');
+      return '/' + path.replace(folder, '').replace(/index\.html$/, '');
     return '';
   });
 

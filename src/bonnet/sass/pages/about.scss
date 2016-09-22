@@ -1,0 +1,15 @@
+@import '../../../node_modules/boneless/lib/_boneless/_utilities/_placeholders.scss';
+@import '../../../node_modules/boneless/lib/_boneless/_utilities/_mixins.scss';
+@import '../../../node_modules/boneless/lib/_boneless/_grid.scss';
+@import 'settings';
+
+.aboutImage {
+  margin-bottom: 2rem;
+  
+  @include bp($bp-grid-medium) {
+    float:right;
+    width: 30%;
+    margin-left: 2rem;
+    border-radius: 4px;
+  }
+}
